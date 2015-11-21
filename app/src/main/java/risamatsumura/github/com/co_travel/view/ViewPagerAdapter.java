@@ -1,21 +1,28 @@
-package risamatsumura.github.com.co_travel.tab;
+package risamatsumura.github.com.co_travel.view;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import java.util.List;
+
+import risamatsumura.github.com.co_travel.view.photo.PhotoTabFragment;
+import risamatsumura.github.com.co_travel.view.place.PlaceTabFragment;
+import risamatsumura.github.com.co_travel.view.trip.TripTabFragment;
+
 /**
  * Created by risam on 21/10/2015.
  * An adapter for the ViewPager which controls
  * the order of the tabs, the titles and their associated content.
  */
-public class TabFragmentPagerAdapter extends FragmentPagerAdapter {
+public class ViewPagerAdapter extends FragmentPagerAdapter {
+    List<Fragment> myPages;
     final int PAGE_COUNT = 3;
     private String tabTitles[] = new String[] { "Trip", "Photos", "Places" };
     private Context context;
 
-    public TabFragmentPagerAdapter(FragmentManager fm, Context context) {
+    public ViewPagerAdapter(FragmentManager fm, Context context) {
         super(fm);
         this.context = context;
     }
@@ -68,7 +75,7 @@ public class TabFragmentPagerAdapter extends FragmentPagerAdapter {
 //    public View getTabView(int position) {
 //        // Given you have a custom layout in `res/layout/custom_tab.xml` with a TextView and ImageView
 //        View v = LayoutInflater.from(context).inflate(tabFrags[position], null);
-////        TextView tv = (TextView) v.findViewById(R.id.textView);
+////        TextView tv = (TextView) v.findViewById(R.id.tvName);
 ////        tv.setText(tabTitles[position]);
 ////        ImageView img = (ImageView) v.findViewById(R.id.imgView);
 ////        img.setImageResource(imageResId[position]);
